@@ -1,0 +1,20 @@
+- platform: netio
+  password: !secret switch_netio_password
+  host: netio-living
+  outlets:
+    1: "Apple TV"
+    2: "Htpc"
+    3: "Lampe Gauche"
+    4: "Lampe Droite"
+- platform: netio
+  host: netio-living2
+  outlets:
+    1: "Autre..."
+    2: "Roomba"
+    3: "Lampadaire"
+    4: "Lampe fruit"
+- platform: netio
+  host: netio-dressing
+  outlets:
+    1: "Hal"
+    2: "Hal's screen"

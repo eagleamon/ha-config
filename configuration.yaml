@@ -1,0 +1,122 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 49.688834
+  longitude: 5.808673
+  elevation: 347
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Brussels
+  customize: !include customize.yaml
+    # device_tracker.joseph_s6: 
+    #   entity_picture: https://s.gravatar.com/avatar/84a20b39474a4f5cacdf26483023768d?s=80
+
+zone: 
+  - name: "Work"
+    latitude: 49.8040308
+    longitude: 6.0924309
+    radius: 100
+
+updater: 
+
+# Enables the frontend
+frontend:
+http:
+  api_password: !secret http_api_password
+  use_x_forwarded_for: true
+  trusted_networks:
+    - 10.1.1.0/24
+
+recorder:
+history:
+
+# Track the sun
+sun:
+
+# Allows you to issue voice commands from the frontend
+conversation:
+
+# Discover some devices automatically
+discovery:
+
+# View all events in a logbook
+logbook:
+
+mqtt:
+  broker: 10.1.1.1
+  username: joseph
+  password: !secret mqtt_password
+  client_id: !secret mqtt_client_id
+
+device_tracker: 
+  - platform: owntracks
+
+group: !include groups.yaml
+
+switch: !include switches.yaml
+
+sensor: !include sensors.yaml
+
+camera: !include cameras.yaml
+
+media_player: !include media_players.yaml
+
+# alexa: !include alexa.yaml
+
+logger:
+  default: WARN
+  logs: 
+    homeassistant.components.http: WARN
+#     homeassistant.core: WARN
+    requests.packages.urllib3.connectionpool: WARN
+#     pynetio: DEBUG
+
+# device_tracker:
+#   platform: owntracks
+
+
+
+#automation:
+#  - alias: "Turn off all lights at 2am"
+#    trigger: 
+#      platform: time
+#      hours: 2
+#      minutes: 0
+#      seconds: 0
+#    action:
+#      service: homeassistant.turn_off
+#      entity_id:
+#        - group.living
+  #      - group.chambre
+  #- alias: "Reveil"
+  #  trigger: 
+  #    platform: time
+  #    hours: 7
+  #    minutes: 10
+  #    seconds: 0
+  #  action:
+  #    service: homeassistant.turn_on
+  #    entity_id: switch.lampe_jo
+  #- alias: "Turn off room lights after morning 9am"
+  #  trigger:
+  #    platform: time
+  #    hours: 9
+  #    minutes: 0
+  #    seconds: 0
+  #  action:
+  #    service: homeassistant.turn_off
+  #    entity_id:
+  #      - group.chambre
+#  - alias: "Switch on when coming home"
+#    trigger:
+#      - platform: state
+#        entity_id: group.all_devices
+#        state: 'home'
+#        from: "not_home"
+#      - platform: time
+#        after: "17:00"
+#    condition: use_trigger_values
+#    action:
+#      service: homeassistant.turn_on
+#      entity_id: group.living

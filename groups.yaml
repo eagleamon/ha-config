@@ -1,0 +1,65 @@
+# Views
+
+default_view:
+  entities: group.insights, group.living, media_player.kodi, media_player.living
+
+surveillance_view:
+  name: Surveillance
+  view: true
+  entities: camera.uvccouloir
+
+server_room_view:
+  name: Server Room
+  view: true
+  entities: group.server
+
+environment_view:
+  name: Sensors
+  view: true
+  entities: group.sensors, group.vdsl
+
+
+# Groups
+living: 
+  name: Living
+  entities: switch.lampe_droite, switch.lampe_gauche, switch.lampadaire, switch.lampe_fruit
+
+insights:
+  name: Insights
+  entities: sensor.dark_sky_hourly_summary
+
+Sensors:
+  entities:
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_cloud_coverage
+    - sensor.dark_sky_daily_high_apparent_temperature
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_apparent_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_daily_max_precip_intensity
+    # - sensor.dark_sky_daily_summary
+    - sensor.dark_sky_dew_point
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_icon
+    # - sensor.dark_sky_minutely_summary
+    - sensor.dark_sky_nearest_storm_bearing
+    - sensor.dark_sky_nearest_storm_distance
+    - sensor.dark_sky_ozone
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_visibility
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_wind_speed
+
+vdsl:
+  name: Home Connection 
+  entities: sensor.speedtest_download, sensor.speedtest_upload, sensor.speedtest_ping
+
+server:
+  name: Server
+  entities: switch.hal, switch.hals_screen

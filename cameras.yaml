@@ -1,0 +1,4 @@
+platform: uvc
+nvr: nvr
+port: 7080
+key: !secret camera_uvc_key

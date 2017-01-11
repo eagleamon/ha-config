@@ -1,0 +1,29 @@
+switch.lampe_gauche:
+  icon: mdi:television
+
+switch.lampe_droite:
+  icon: mdi:television
+
+switch.lampadaire:
+  icon: mdi:lightbulb
+
+switch.lampe_fruit:
+  icon: mdi:lightbulb
+
+sensor.speedtest_download:
+  friendly_name: Download Speed
+  icon: mdi:download
+
+sensor.speedtest_ping:
+  friendly_name: Ping Time
+  icon: mdi:timer
+
+sensor.speedtest_upload:
+  friendly_name: Upload Speed
+  icon: mdi:upload
+
+sensor.dark_sky_hourly_summary:
+  friendly_name: Weather
+
+camera.uvccouloir:
+  friendly_name: Hall

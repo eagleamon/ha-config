@@ -1,0 +1,4 @@
+- platform: kodi
+  host: htpc
+  turn_off_action: reboot
+- platform: cast
